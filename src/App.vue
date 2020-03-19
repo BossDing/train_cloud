@@ -12,6 +12,11 @@
 	}
 </script>
 
-<style>
-	/*每个页面公共css */
+<style lang="stylus">
+@import './uni.styl';
+@import './util.styl';
+.page {
+	background-color: $uni-bg-color-primary;
+	height: 100vh;
+}
 </style>
