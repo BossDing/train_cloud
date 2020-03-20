@@ -1,6 +1,6 @@
 .login {
   color: #fff;
-  background: url("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1584672785&di=73c510559b4f28b5ee5f01c7a7418e94&src=http://img.jk51.com/img_jk51/330795344.jpeg") center center no-repeat;
+  background: url("https://cccodedu.oss-cn-shanghai.aliyuncs.com/upload/image/202003/login_bg.jpg") center center no-repeat;
   background-size: cover;
 }
 .login .title {

@@ -1,13 +1,29 @@
 <template>
-	<view class="content">
-		<view>
-			<text class="title">{{title}}</text>
-		</view>
+	<view class="index page">
+		<!-- 一般用法 -->
+		<uni-grid :column="3">
+		    <uni-grid-item>
+		        <navigator url="">
+					
+				</navigator>
+		    </uni-grid-item>
+		    <uni-grid-item>
+		        <text class="text">文本</text>
+		    </uni-grid-item>
+		    <uni-grid-item>
+		        <text class="text">文本</text>
+		    </uni-grid-item>
+		</uni-grid>
 	</view>
 </template>
 
 <script>
+	import { uniGrid, uniGridItem } from '@dcloudio/uni-ui'
 	export default {
+		components: {
+			uniGrid,
+			uniGridItem
+		},
 		data() {
 			return {
 				title: 'Hello'
@@ -22,20 +38,6 @@
 	}
 </script>
 
-<style>
-	.content {
-		text-align: center;
-		height: 400upx;
-	}
-
-	.logo {
-		height: 200upx;
-		width: 200upx;
-		margin-top: 200upx;
-	}
-
-	.title {
-		font-size: 36upx;
-		color: #8f8f94;
-	}
+<style lang="stylus">
+@import '../../uni.styl';
 </style>

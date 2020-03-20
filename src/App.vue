@@ -20,7 +20,6 @@
 @import './uni.styl';
 @import './util.styl';
 .page {
-	background-color: $uni-bg-color-primary;
 	height: 100vh;
 }
 </style>

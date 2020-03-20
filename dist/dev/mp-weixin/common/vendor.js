@@ -9043,10 +9043,19 @@ exports.default = void 0;
 var _default = {
   "pages": {
     "pages/login/login": {
-      "navigationBarTitleText": "登录"
+      "navigationBarTitleText": "登录",
+      "usingComponents": {
+        "uni-icons": "/node-modules/@dcloudio/uni-ui/lib/uni-icons/uni-icons"
+      },
+      "usingAutoImportComponents": {}
     },
     "pages/index/index": {
-      "navigationBarTitleText": "安全培训系统"
+      "navigationBarTitleText": "安全培训系统",
+      "usingComponents": {
+        "uni-grid": "/node-modules/@dcloudio/uni-ui/lib/uni-grid/uni-grid",
+        "uni-grid-item": "/node-modules/@dcloudio/uni-ui/lib/uni-grid-item/uni-grid-item"
+      },
+      "usingAutoImportComponents": {}
     }
   },
   "globalStyle": {

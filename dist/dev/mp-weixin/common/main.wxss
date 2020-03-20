@@ -2,7 +2,6 @@
   text-align: center;
 }
 .page {
-  background-color: #4876ff;
   height: 100vh;
 }
 
