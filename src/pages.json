@@ -13,6 +13,34 @@
             }
         }
 		
+        ,{
+            "path" : "pages/video/video",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/archives/archives",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/bank/bank",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/integral/integral",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/other/other",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/special/special",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/superior/superior",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

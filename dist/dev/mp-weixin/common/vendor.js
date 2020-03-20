@@ -9056,7 +9056,32 @@ var _default = {
         "uni-grid-item": "/node-modules/@dcloudio/uni-ui/lib/uni-grid-item/uni-grid-item"
       },
       "usingAutoImportComponents": {}
-    }
+    },
+    "pages/video/video": {
+      "usingComponents": {},
+      "usingAutoImportComponents": {}
+    },
+    "pages/archives/archives": {
+      "usingComponents": {},
+      "usingAutoImportComponents": {}
+    },
+    "pages/bank/bank": {
+      "usingComponents": {},
+      "usingAutoImportComponents": {}
+    },
+    "pages/integral/integral": {
+      "usingComponents": {},
+      "usingAutoImportComponents": {}
+    },
+    "pages/other/other": {
+      "usingComponents": {},
+      "usingAutoImportComponents": {}
+    },
+    "pages/special/special": {
+      "usingComponents": {},
+      "usingAutoImportComponents": {}
+    },
+    "pages/superior/superior": {}
   },
   "globalStyle": {
     "navigationBarTextStyle": "black",

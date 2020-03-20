@@ -4,7 +4,7 @@
 		<view class="grid-wrapper">
 			<uni-grid :column="3">
 			    <uni-grid-item>
-			        <navigator url="" class="nav">
+			        <navigator url="../video/video" class="nav">
 						<view class="icon-wrapper">
 							<image class="icon" src="/static/img/video.png" mode="aspectFit"></image>
 						</view>
@@ -14,7 +14,7 @@
 					</navigator>
 			    </uni-grid-item>
 			    <uni-grid-item>
-			        <navigator url="" class="nav">
+			        <navigator url="../bank/bank" class="nav">
 			        	<view class="icon-wrapper">
 			        		<image class="icon" src="/static/img/bank.png" mode="aspectFit"></image>
 			        	</view>
@@ -24,7 +24,7 @@
 			        </navigator>
 			    </uni-grid-item>
 			    <uni-grid-item>
-			        <navigator url="" class="nav">
+			        <navigator url="../special/special" class="nav">
 			        	<view class="icon-wrapper">
 			        		<image class="icon" src="/static/img/special.png" mode="aspectFit"></image>
 			        	</view>
@@ -34,7 +34,7 @@
 			        </navigator>
 			    </uni-grid-item>
 				<uni-grid-item>
-				    <navigator url="" class="nav">
+				    <navigator url="../archives/archives" class="nav">
 						<view class="icon-wrapper">
 							<image class="icon" src="/static/img/archives.png" mode="aspectFit"></image>
 						</view>
@@ -44,9 +44,9 @@
 					</navigator>
 				</uni-grid-item>
 				<uni-grid-item>
-				    <navigator url="" class="nav">
+				    <navigator url="../superior/superior" class="nav">
 				    	<view class="icon-wrapper">
-				    		<image class="icon" src="/static/img/bank.png" mode="aspectFit"></image>
+				    		<image class="icon" src="/static/img/superior.png" mode="aspectFit"></image>
 				    	</view>
 				    	<view class="nav-txt">
 				    		上级抽考
@@ -54,7 +54,7 @@
 				    </navigator>
 				</uni-grid-item>
 				<uni-grid-item>
-				    <navigator url="" class="nav">
+				    <navigator url="../other/other" class="nav">
 				    	<view class="icon-wrapper">
 				    		<image class="icon" src="/static/img/other.png" mode="aspectFit"></image>
 				    	</view>
