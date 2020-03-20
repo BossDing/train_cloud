@@ -1,16 +1,17 @@
 <script>
 	export default {
 		onLaunch: function() {
+			console.log('云init')
 			wx.cloud.init({
 				traceUser: true,
 				env: 'dev-im8b3'
 			})
 		},
 		onShow: function() {
-			console.log('App Show')
+			
 		},
 		onHide: function() {
-			console.log('App Hide')
+			
 		}
 	}
 </script>

@@ -175,24 +175,35 @@ var _default = {
   },
   methods: {
     submit: function submit() {
+      var _this = this;
+
       var _this$form = this.form,
           account = _this$form.account,
           password = _this$form.password;
 
       if ([account, password].includes('')) {
-        uni.showToast({
-          icon: 'none',
-          title: '工号或密码不正确',
-          duration: 1000
-        });
+        this.showTip();
       } else {
         wx.cloud.callFunction({
           name: 'login',
           data: this.form
-        }).then(console.log); // uni.navigateTo({
-        // 	url: '../index/index'
-        // })
+        }).then(function (res) {
+          if (res.result.code === 0) {
+            uni.navigateTo({
+              url: '../index/index'
+            });
+          } else {
+            _this.showTip();
+          }
+        });
       }
+    },
+    showTip: function showTip() {
+      uni.showToast({
+        icon: 'none',
+        title: '工号或密码不正确',
+        duration: 1000
+      });
     }
   },
   mounted: function mounted() {}

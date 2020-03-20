@@ -112,17 +112,14 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _default = {
   onLaunch: function onLaunch() {
+    console.log('云init');
     wx.cloud.init({
       traceUser: true,
       env: 'dev-im8b3'
     });
   },
-  onShow: function onShow() {
-    console.log('App Show');
-  },
-  onHide: function onHide() {
-    console.log('App Hide');
-  }
+  onShow: function onShow() {},
+  onHide: function onHide() {}
 };
 exports.default = _default;
 

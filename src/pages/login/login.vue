@@ -9,7 +9,7 @@
 				<input type="text" v-model="form.account" placeholder="请输入工号" class="input"/>
 			</view>
 			<view class="row">
-				<uni-icons type="eye-slash" size="30" class="icon"></uni-icons>
+				<uni-icons type="locked" size="30" class="icon"></uni-icons>
 				<input type="password" v-model="form.password" placeholder="请输入密码" class="input"/>
 			</view>
 			<view class="btn">
@@ -38,20 +38,29 @@
 				let {account, password} = this.form
 				
 				if ([account, password].includes('')) {
-					uni.showToast({
-						icon: 'none',
-						title: '工号或密码不正确',
-						duration: 1000
-					})
+					this.showTip()
 				} else {
 					wx.cloud.callFunction({
 					  name: 'login',
 					  data: this.form
-					}).then(console.log)
-					// uni.navigateTo({
-					// 	url: '../index/index'
-					// })
+					}).then(res => {
+						if (res.result.code === 0) {
+							uni.navigateTo({
+								url: '../index/index'
+							})
+						} else {
+							this.showTip()
+						}
+					})
+					
 				}
+			},
+			showTip() {
+				uni.showToast({
+					icon: 'none',
+					title: '工号或密码不正确',
+					duration: 1000
+				})
 			}
 		},
 		mounted() {
