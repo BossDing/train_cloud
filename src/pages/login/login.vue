@@ -43,6 +43,14 @@
 						title: '工号或密码不正确',
 						duration: 1000
 					})
+				} else {
+					wx.cloud.callFunction({
+					  name: 'login',
+					  data: this.form
+					}).then(console.log)
+					// uni.navigateTo({
+					// 	url: '../index/index'
+					// })
 				}
 			}
 		},

@@ -1,0 +1,42 @@
+.login {
+  color: #fff;
+  background: url("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1584672785&di=73c510559b4f28b5ee5f01c7a7418e94&src=http://img.jk51.com/img_jk51/330795344.jpeg") center center no-repeat;
+  background-size: cover;
+}
+.login .title {
+  font-size: 64rpx;
+  padding: 60rpx 0 20vh;
+  text-shadow: 0 0 20rpx 20rpx #333;
+}
+.login .row {
+  width: 80%;
+  height: 80rpx;
+  border-radius: 80rpx;
+  margin: 40rpx auto;
+  background: #fff;
+  position: relative;
+}
+.login .row .icon {
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+}
+.login .row .input {
+  display: block;
+  height: 80rpx;
+  position: absolute;
+  top: 0;
+  left: 80rpx;
+  right: 20rpx;
+  bottom: 0;
+  font-size: 36rpx;
+  color: #666;
+}
+.login .btn {
+  width: 80%;
+  margin: 120rpx auto 0;
+}
+.login .btn .login-btn {
+  background: uni-bg-color-primary;
+}
+
