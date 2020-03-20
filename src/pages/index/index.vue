@@ -1,19 +1,71 @@
 <template>
 	<view class="index page">
 		<!-- 一般用法 -->
-		<uni-grid :column="3">
-		    <uni-grid-item>
-		        <navigator url="">
-					
-				</navigator>
-		    </uni-grid-item>
-		    <uni-grid-item>
-		        <text class="text">文本</text>
-		    </uni-grid-item>
-		    <uni-grid-item>
-		        <text class="text">文本</text>
-		    </uni-grid-item>
-		</uni-grid>
+		<view class="grid-wrapper">
+			<uni-grid :column="3">
+			    <uni-grid-item>
+			        <navigator url="" class="nav">
+						<view class="icon-wrapper">
+							<image class="icon" src="/static/img/video.png" mode="aspectFit"></image>
+						</view>
+						<view class="nav-txt">
+							视频课程
+						</view>
+					</navigator>
+			    </uni-grid-item>
+			    <uni-grid-item>
+			        <navigator url="" class="nav">
+			        	<view class="icon-wrapper">
+			        		<image class="icon" src="/static/img/bank.png" mode="aspectFit"></image>
+			        	</view>
+			        	<view class="nav-txt">
+			        		考试题库
+			        	</view>
+			        </navigator>
+			    </uni-grid-item>
+			    <uni-grid-item>
+			        <navigator url="" class="nav">
+			        	<view class="icon-wrapper">
+			        		<image class="icon" src="/static/img/special.png" mode="aspectFit"></image>
+			        	</view>
+			        	<view class="nav-txt">
+			        		专题练习
+			        	</view>
+			        </navigator>
+			    </uni-grid-item>
+				<uni-grid-item>
+				    <navigator url="" class="nav">
+						<view class="icon-wrapper">
+							<image class="icon" src="/static/img/archives.png" mode="aspectFit"></image>
+						</view>
+						<view class="nav-txt">
+							管理档案
+						</view>
+					</navigator>
+				</uni-grid-item>
+				<uni-grid-item>
+				    <navigator url="" class="nav">
+				    	<view class="icon-wrapper">
+				    		<image class="icon" src="/static/img/bank.png" mode="aspectFit"></image>
+				    	</view>
+				    	<view class="nav-txt">
+				    		上级抽考
+				    	</view>
+				    </navigator>
+				</uni-grid-item>
+				<uni-grid-item>
+				    <navigator url="" class="nav">
+				    	<view class="icon-wrapper">
+				    		<image class="icon" src="/static/img/other.png" mode="aspectFit"></image>
+				    	</view>
+				    	<view class="nav-txt">
+				    		其余
+				    	</view>
+				    </navigator>
+				</uni-grid-item>
+			</uni-grid>
+		</view>
+		
 	</view>
 </template>
 
@@ -40,4 +92,29 @@
 
 <style lang="stylus">
 @import '../../uni.styl';
+.index {
+	background: url(https://cccodedu.oss-cn-shanghai.aliyuncs.com/upload/image/202003/login_bg.jpg) center center no-repeat;
+	background-size: cover; 
+	display: flex;
+	align-items: flex-end;
+	height: 100vh;
+	.grid-wrapper {
+		width: 100vw;
+		height: auto;
+	}
+	.nav {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: rgba(255, 255, 255, 0.8);
+		.icon {
+			width: 80upx;
+			height: 80upx;
+		}
+	}
+}
+
+
 </style>

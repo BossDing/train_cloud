@@ -1,1 +1,37 @@
+.index {
+  background: url("https://cccodedu.oss-cn-shanghai.aliyuncs.com/upload/image/202003/login_bg.jpg") center center no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+          align-items: flex-end;
+  height: 100vh;
+}
+.index .grid-wrapper {
+  width: 100vw;
+  height: auto;
+}
+.index .nav {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  background: rgba(255,255,255,0.8);
+}
+.index .nav .icon {
+  width: 80rpx;
+  height: 80rpx;
+}
 
