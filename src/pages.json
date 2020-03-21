@@ -35,7 +35,9 @@
         }
         ,{
             "path" : "pages/special/special",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "专题练习"
+			}
         }
         ,{
             "path" : "pages/superior/superior",

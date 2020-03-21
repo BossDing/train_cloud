@@ -92,9 +92,7 @@
 
 <style lang="stylus">
 @import '../../uni.styl';
-.index {
-	background: url(https://cccodedu.oss-cn-shanghai.aliyuncs.com/upload/image/202003/login_bg.jpg) center center no-repeat;
-	background-size: cover; 
+.index {	
 	display: flex;
 	align-items: flex-end;
 	height: 100vh;

@@ -13,7 +13,6 @@
 	"cloudfunctionRoot": "functions/",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
-	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -40,7 +39,21 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "login",
+					"name": "pages/special/special",
+					"pathName": "pages/special/special",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/login",
 					"pathName": "pages/login/login",
 					"scene": null
 				}

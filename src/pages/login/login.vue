@@ -10,7 +10,7 @@
 			</view>
 			<view class="row">
 				<uni-icons type="locked" size="30" class="icon"></uni-icons>
-				<input type="password" v-model="form.password" placeholder="请输入密码" class="input"/>
+				<input type="text" v-model="form.password" placeholder="请输入密码" class="input"/>
 			</view>
 			<view class="btn">
 				 <button type="primary" block @click="submit">登录</button>
