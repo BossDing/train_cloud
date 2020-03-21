@@ -15,7 +15,9 @@
 		
         ,{
             "path" : "pages/video/video",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "视频课程"
+			}
         }
         ,{
             "path" : "pages/archives/archives",
@@ -46,7 +48,7 @@
         ,{
             "path" : "pages/result/result",
             "style" : {
-				"navigationBarTitleText": "练习结果"
+				"navigationBarTitleText": "答题结果"
 			}
         }
     ],

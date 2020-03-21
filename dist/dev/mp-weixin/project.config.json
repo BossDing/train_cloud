@@ -39,30 +39,9 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/special/special",
-					"pathName": "pages/special/special",
+					"name": "pages/video/video",
+					"pathName": "pages/video/video",
 					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/index",
-					"pathName": "pages/index/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/login/login",
-					"pathName": "pages/login/login",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 3,
-					"name": "pages/result/result",
-					"pathName": "pages/result/result",
-					"query": "corrects=2",
 					"scene": null
 				}
 			]
