@@ -55,6 +55,14 @@
 					"id": -1,
 					"name": "pages/login/login",
 					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "pages/result/result",
+					"pathName": "pages/result/result",
+					"query": "corrects=2",
 					"scene": null
 				}
 			]

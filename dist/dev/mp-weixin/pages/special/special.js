@@ -170,7 +170,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(uni) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -179,97 +179,73 @@ exports.default = void 0;
 
 var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 104));
 
+var _const = __webpack_require__(/*! ../../constants/const.js */ 117);
+
 var _transData = __webpack_require__(/*! ../../utils/transData.js */ 107);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var db = wx.cloud.database();
 var _default = {
   data: function data() {
     return {
       list: [],
-      items: [{
-        value: 'USA',
-        name: '美国'
-      }, {
-        value: 'CHN',
-        name: '中国',
-        checked: 'true'
-      }, {
-        value: 'BRA',
-        name: '巴西'
-      }, {
-        value: 'JPN',
-        name: '日本'
-      }, {
-        value: 'ENG',
-        name: '英国'
-      }, {
-        value: 'FRA',
-        name: '法国'
-      }],
-      current: 'A'
+      answers: [],
+      corrects: 0
     };
   },
   methods: {
-    radioChange: function radioChange(e) {},
+    radioChange: function radioChange(e, i) {
+      var value = e.detail.value;
+      this.answers[i].answer = value;
+    },
     getList: function () {
       var _getList = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {
-        var res;
+        var r, skip, res;
         return _regenerator.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.prev = 0;
-                _context.next = 3;
-                return db.collection('questions').skip(0).limit(10).get();
+                r = Math.random() * 10;
+                r = r === 0 ? r + 1 : r;
+                skip = ~~r * 10;
+                _context.prev = 3;
+                _context.next = 6;
+                return db.collection('questions').skip(skip).limit(_const.limit).get();
 
-              case 3:
+              case 6:
                 res = _context.sent;
-                console.log(res);
                 this.list = (0, _transData.transQuestion)(res.data);
-                console.log(this.list);
-                _context.next = 12;
+                this.answers = this.list.map(function (item) {
+                  var obj = _objectSpread({}, item);
+
+                  obj.answer = 'A';
+                  return obj;
+                });
+                _context.next = 14;
                 break;
 
-              case 9:
-                _context.prev = 9;
-                _context.t0 = _context["catch"](0);
+              case 11:
+                _context.prev = 11;
+                _context.t0 = _context["catch"](3);
                 console.log(_context.t0);
 
-              case 12:
+              case 14:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this, [[0, 9]]);
+        }, _callee, this, [[3, 11]]);
       }));
 
       function getList() {
@@ -277,13 +253,31 @@ var _default = {
       }
 
       return getList;
-    }()
+    }(),
+    submit: function submit() {
+      this.corrects = 0;
+      var len = this.list.length;
+
+      for (var i = 0; i < len; i++) {
+        if (this.list[i].answer === this.answers[i].answer) {
+          this.corrects++;
+        }
+      }
+
+      uni.navigateTo({
+        url: "../result/result?corrects=".concat(this.corrects),
+        success: function success(res) {},
+        fail: function fail() {},
+        complete: function complete() {}
+      });
+    }
   },
   onLoad: function onLoad() {
     this.getList();
   }
 };
 exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })
 

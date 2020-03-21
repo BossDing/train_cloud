@@ -2502,6 +2502,25 @@ exports.transQuestion = transQuestion;
 
 /***/ }),
 
+/***/ 117:
+/*!********************************!*\
+  !*** ./src/constants/const.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.limit = void 0;
+var limit = 10;
+exports.limit = limit;
+
+/***/ }),
+
 /***/ 14:
 /*!**********************************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -9802,6 +9821,11 @@ var _default = {
       "usingAutoImportComponents": {}
     },
     "pages/superior/superior": {
+      "usingComponents": {},
+      "usingAutoImportComponents": {}
+    },
+    "pages/result/result": {
+      "navigationBarTitleText": "练习结果",
       "usingComponents": {},
       "usingAutoImportComponents": {}
     }

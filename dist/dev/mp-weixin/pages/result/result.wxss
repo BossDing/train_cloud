@@ -1,0 +1,39 @@
+.result {
+  height: 100vh;
+  position: relative;
+}
+.result .result-wapper {
+  height: 100vh;
+  background: rgba(255,255,255,0.85);
+}
+.result .title {
+  color: #007aff;
+  height: 200rpx;
+  line-height: 200rpx;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 80rpx;
+}
+.result .desc {
+  color: #007aff;
+  height: 200rpx;
+  line-height: 200rpx;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 64rpx;
+  margin: 80rpx auto;
+}
+.result .btn-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40rpx;
+  z-index: 1;
+}
+

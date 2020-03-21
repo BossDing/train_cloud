@@ -43,6 +43,12 @@
             "path" : "pages/superior/superior",
             "style" : {}
         }
+        ,{
+            "path" : "pages/result/result",
+            "style" : {
+				"navigationBarTitleText": "练习结果"
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
