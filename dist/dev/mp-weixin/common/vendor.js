@@ -11062,7 +11062,6 @@ var _default = {
     },
     "pages/bank/bank": {
       "navigationBarTitleText": "考试题库",
-      "enablePullDownRefresh": true,
       "usingComponents": {},
       "usingAutoImportComponents": {}
     },

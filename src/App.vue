@@ -20,8 +20,7 @@
 @import './uni.styl';
 @import './util.styl';
 .page {
-	height: 100vh;
-	background: url(https://cccodedu.oss-cn-shanghai.aliyuncs.com/upload/image/202003/login_bg.jpg) center center no-repeat; 
+	background: url(https://cccodedu.oss-cn-shanghai.aliyuncs.com/upload/image/202003/login_bg.jpg) center center repeat-y; 
 	background-size: cover; 
 }
 </style>
