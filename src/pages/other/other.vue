@@ -1,14 +1,19 @@
 <template>
 	<view class="other page">
-		<view class="list" v-for="item in list" :key="item._id">
-			<view class="item">
-				<view class="result">
-					得分：{{item.score}}, 答对了{{item.correct}}道题
-				</view>
-				<view class="time">
-					交卷时间： {{item.time.toLocaleString()}}
+		<view class="" v-if="this.list.length" key="has">
+			<view class="list" v-for="item in list" :key="item._id">
+				<view class="item">
+					<view class="result">
+						得分：{{item.score}}, 答对了{{item.correct}}道题
+					</view>
+					<view class="time">
+						交卷时间： {{item.time.toLocaleString()}}
+					</view>
 				</view>
 			</view>
+		</view>
+		<view class="none" key="no">
+			暂无
 		</view>
 	</view>
 </template>
@@ -28,7 +33,10 @@
 					let res = await db.collection('history').where({
 						account: this.$store.state.user.account
 					}).get()
-					this.list = res.data
+					if (res.data.length) {
+						this.list = res.data
+					}
+					
 				}catch(e){
 					console.log(e)
 				}
@@ -64,6 +72,10 @@
 			color: $uni-text-color-grey;
 			margin-top: 40upx;
 		}
+	}
+	.none {
+		padding-top: 200upx;
+		text-align: center;
 	}
 }
 </style>

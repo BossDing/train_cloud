@@ -286,12 +286,14 @@ var _default = {
             switch (_context3.prev = _context3.next) {
               case 0:
                 console.log(this.$store.state.user.account);
-                _context3.next = 3;
-                return db.collection('exam').where({
-                  account: this.$store.state.user.account
-                }).remove();
+                wx.cloud.callFunction({
+                  name: 'examRemove',
+                  data: {
+                    account: this.$store.state.user.account
+                  }
+                });
 
-              case 3:
+              case 2:
               case "end":
                 return _context3.stop();
             }

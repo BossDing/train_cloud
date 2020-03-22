@@ -95,9 +95,12 @@
 			
 			async deleteExam() {
 				console.log(this.$store.state.user.account)
-				await db.collection('exam').where({
-					account: this.$store.state.user.account
-				}).remove()
+				wx.cloud.callFunction({
+				  name: 'examRemove',
+				  data: {
+					  account: this.$store.state.user.account
+				  }
+				})
 			}
 			
 			

@@ -28,4 +28,8 @@
   color: #999;
   margin-top: 40rpx;
 }
+.other .none {
+  padding-top: 200rpx;
+  text-align: center;
+}
 

@@ -187,6 +187,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
 var db = wx.cloud.database();
 var _default = {
   data: function data() {
@@ -210,7 +215,11 @@ var _default = {
 
               case 3:
                 res = _context.sent;
-                this.list = res.data;
+
+                if (res.data.length) {
+                  this.list = res.data;
+                }
+
                 _context.next = 10;
                 break;
 
