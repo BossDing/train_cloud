@@ -8,11 +8,16 @@
 				共{{limit}}题，你答对了{{corrects}}道
 			</view>
 		</view>
-		<view class="btn-wrapper">
+		<view class="btn-wrapper" v-if="this.type === 'pratice'" key="partice">
 			<button type="default" @click="jump('../special/special')">
 				再练一次
 			</button>
 			<button type="primary" @click="jump('../index/index')">
+				返回首页
+			</button>
+		</view>
+		<view class="btn-wrapper" key="exam">
+			<button type="primary" block @click="jump('../index/index')">
 				返回首页
 			</button>
 		</view>
@@ -24,6 +29,7 @@
 	export default {
 		data() {
 			return {
+				type: 'pratice',
 				corrects: 0,
 				limit
 			};
@@ -43,6 +49,7 @@
 		},
 		onLoad(opt) {
 			this.corrects = opt.corrects
+			this.type = opt.type
 		}
 	}
 </script>

@@ -25,8 +25,9 @@
 		methods: {
 			async getList() {
 				try{
-					let res = await db.collection('history').get()
-					console.log(res)
+					let res = await db.collection('history').where({
+						account: this.$store.state.user.account
+					}).get()
 					this.list = res.data
 				}catch(e){
 					console.log(e)

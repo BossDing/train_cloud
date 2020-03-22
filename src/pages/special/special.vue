@@ -31,6 +31,7 @@
 	export default {
 		data() {
 			return {
+				type: 'pratice',
 				list: [],
 				answers: [],
 				corrects: 0
@@ -40,6 +41,25 @@
 			radioChange(e, i) {
 				let { value } = e.detail
 				this.answers[i].answer = value
+			},
+			
+			submit() {
+				this.corrects = 0
+				let len = this.list.length
+				for (let i = 0; i < len; i++) {
+					if (this.list[i].answer === this.answers[i].answer) {
+						this.corrects++
+					}
+				}
+				
+				if(this.type === 'exam') {
+					this.addHistory()
+					this.deleteExam()
+				}
+				
+				uni.navigateTo({
+					url: `../result/result?corrects=${this.corrects}&type=${this.type}`
+				})
 			},
 			
 			async getList() {
@@ -62,30 +82,28 @@
 				}
 			},
 			
-			async submit() {
-				this.corrects = 0
-				let len = this.list.length
-				for (let i = 0; i < len; i++) {
-					if (this.list[i].answer === this.answers[i].answer) {
-						this.corrects++
-					}
-				}
+			async addHistory() {
 				let res = await db.collection('history').add({
 					data: {
+						account: this.$store.state.user.account,
 						correct: this.corrects,
 						score: this.corrects * 10,
 						time: new Date()
 					}
 				})
-				uni.navigateTo({
-					url: `../result/result?corrects=${this.corrects}`,
-					success: res => {},
-					fail: () => {},
-					complete: () => {}
-				});
+			},
+			
+			async deleteExam() {
+				console.log(this.$store.state.user.account)
+				await db.collection('exam').where({
+					account: this.$store.state.user.account
+				}).remove()
 			}
+			
+			
 		},
-		onLoad() {
+		onLoad(opt) {
+			this.type = opt.type
 			this.getList()
 		}
 	}

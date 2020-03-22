@@ -15,7 +15,7 @@
 				</view>
 			</view>
 			<view class="investigation">
-				<button type="primary" size="mini" @click="investigation">抽查</button>
+				<button type="primary" size="mini" @click="investigation(item.account)">抽考</button>
 			</view>
 		</view>
 	</view>
@@ -27,19 +27,28 @@
 	export default {
 		data() {
 			return {
-				list: []
+				
+				list: [],
+				unable: true,
 			};
 		},
 		methods: {
-			investigation(id) {
+			async investigation(account) {
+				await this.getExam(account)
+				if (this.unable) {
+					await db.collection('exam').add({
+						data: {
+							account
+						}
+					})
+				}
 				uni.showToast({
 					icon: 'none',
-					title: '试卷已成功派发给他',
+					title: this.unable ? '试卷已派发给该员工' : '不能重复派发',
 					duration: 1000
 				})
 			},
-			
-			
+						
 			async getList() {
 				try{
 					let res = await db.collection('accounts').where({
@@ -50,6 +59,13 @@
 				}catch(e){
 					console.log(e)
 				}
+			},
+			
+			async getExam(account) {
+				let { data } = await db.collection('exam').where({
+					account
+				}).get()
+				this.unable = data.length === 0
 			}
 		},
 		onLoad() {
