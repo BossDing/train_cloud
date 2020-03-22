@@ -32,26 +32,44 @@
 		data() {
 			return {
 				list: [],
+				total: 0,
 				skip: 0
 			};
 		},
+
 		methods: {
 			radioChange(e, i) {
 				let { value } = e.detail
 				this.answers[i].answer = value
 			},
 			
+			async getTotal() {
+				let res = await db.collection('questions').count()
+				this.total = res.total
+			},
+			
 			async getList() {
 				try{
-					let res = await db.collection('questions').skip(this.skip).limit(limit).get()
-					this.list = transQuestion(res.data)
+					let res = await db.collection('questions').skip(this.skip*10).limit(limit).get()
+					if (res.data.length) {
+						this.list = [...this.list, ...transQuestion(res.data)]
+					}
+					
 					
 				}catch(e){
 					console.log(e)
 				}
 			}
 		},
+		onReachBottom() {
+			this.skip += 1
+			if (this.list.length < this.total) {
+				this.getList()
+			}
+			
+		},
 		onLoad() {
+			this.getTotal()
 			this.getList()
 		}
 	}
@@ -60,12 +78,8 @@
 <style lang="stylus">
 @import '../../uni.styl';	
 .bank {
-	height: 100vh;
-	position: relative;
 	.questions-wrapper {
 		background: rgba(225, 225, 255, 0.85); 
-		height: 100vh;
-		overflow: auto;
 	}
 	.title {
 		font-size: 40upx;
