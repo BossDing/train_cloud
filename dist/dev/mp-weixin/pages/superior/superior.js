@@ -220,7 +220,7 @@ var _default = {
     investigation: function investigation(id) {
       uni.showToast({
         icon: 'none',
-        title: '问卷已成功派发给他',
+        title: '试卷已成功派发给他',
         duration: 1000
       });
     },
