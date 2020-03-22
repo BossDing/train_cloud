@@ -51,6 +51,12 @@
 				"navigationBarTitleText": "答题结果"
 			}
         }
+        ,{
+            "path" : "pages/videoList/videoList",
+            "style" : {
+				"navigationBarTitleText": "视频列表"
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

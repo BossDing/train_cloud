@@ -9,7 +9,8 @@
     "pages/other/other",
     "pages/special/special",
     "pages/superior/superior",
-    "pages/result/result"
+    "pages/result/result",
+    "pages/videoList/videoList"
   ],
   "subPackages": [],
   "window": {
@@ -18,6 +19,5 @@
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

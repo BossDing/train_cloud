@@ -158,11 +158,11 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _uniGridItem = function _uniGridItem() {
-  return __webpack_require__.e(/*! import() | node-modules/@dcloudio/uni-ui/lib/uni-grid-item/uni-grid-item */ "node-modules/@dcloudio/uni-ui/lib/uni-grid-item/uni-grid-item").then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-grid-item/uni-grid-item */ 88));
+  return __webpack_require__.e(/*! import() | node-modules/@dcloudio/uni-ui/lib/uni-grid-item/uni-grid-item */ "node-modules/@dcloudio/uni-ui/lib/uni-grid-item/uni-grid-item").then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-grid-item/uni-grid-item */ 90));
 };
 
 var _uniGrid = function _uniGrid() {
-  return __webpack_require__.e(/*! import() | node-modules/@dcloudio/uni-ui/lib/uni-grid/uni-grid */ "node-modules/@dcloudio/uni-ui/lib/uni-grid/uni-grid").then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-grid/uni-grid */ 95));
+  return __webpack_require__.e(/*! import() | node-modules/@dcloudio/uni-ui/lib/uni-grid/uni-grid */ "node-modules/@dcloudio/uni-ui/lib/uni-grid/uni-grid").then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-grid/uni-grid */ 97));
 };
 
 var _default = {
