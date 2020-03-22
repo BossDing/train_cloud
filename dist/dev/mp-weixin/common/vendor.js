@@ -11057,6 +11057,7 @@ var _default = {
       "usingAutoImportComponents": {}
     },
     "pages/archives/archives": {
+      "navigationBarTitleText": "档案管理",
       "usingComponents": {},
       "usingAutoImportComponents": {}
     },
@@ -11070,6 +11071,7 @@ var _default = {
       "usingAutoImportComponents": {}
     },
     "pages/other/other": {
+      "navigationBarTitleText": "查看历史练习成绩",
       "usingComponents": {},
       "usingAutoImportComponents": {}
     },

@@ -75,6 +75,8 @@
 	color: #ffffff;
 	background: url(https://cccodedu.oss-cn-shanghai.aliyuncs.com/upload/image/202003/login_bg.jpg) center center no-repeat;
 	background-size: cover; 
+	min-height: 100vh;
+	overflow: auto;
 	.title {
 		font-size: 64upx;
 		padding: 60upx 0 20vh;
