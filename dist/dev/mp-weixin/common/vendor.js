@@ -1929,11 +1929,15 @@ _vue.default.use(_vuex.default);
 
 var store = new _vuex.default.Store({
   state: {
-    videoUrl: ''
+    videoUrl: '',
+    user: {}
   },
   mutations: {
     changeVideoUrl: function changeVideoUrl(state, payload) {
       state.videoUrl = payload;
+    },
+    setUser: function setUser(state, payload) {
+      state.user = payload;
     }
   },
   actions: {}

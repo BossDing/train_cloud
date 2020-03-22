@@ -44,6 +44,7 @@
 					  name: 'login',
 					  data: this.form
 					}).then(res => {
+						this.$store.commit('setUser', res.result.res.data[0])
 						if (res.result.code === 0) {
 							uni.navigateTo({
 								url: '../index/index'

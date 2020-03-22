@@ -33,7 +33,7 @@
 			        	</view>
 			        </navigator>
 			    </uni-grid-item>
-				<uni-grid-item>
+				<uni-grid-item v-if="$store.state.user.permissions.includes(0)">
 				    <navigator url="../archives/archives" class="nav">
 						<view class="icon-wrapper">
 							<image class="icon" src="/static/img/archives.png" mode="aspectFit"></image>
@@ -43,7 +43,7 @@
 						</view>
 					</navigator>
 				</uni-grid-item>
-				<uni-grid-item>
+				<uni-grid-item v-if="$store.state.user.permissions.includes(1)">
 				    <navigator url="../superior/superior" class="nav">
 				    	<view class="icon-wrapper">
 				    		<image class="icon" src="/static/img/superior.png" mode="aspectFit"></image>

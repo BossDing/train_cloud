@@ -179,6 +179,8 @@ var _default = {
           name: 'login',
           data: this.form
         }).then(function (res) {
+          _this.$store.commit('setUser', res.result.res.data[0]);
+
           if (res.result.code === 0) {
             uni.navigateTo({
               url: '../index/index'

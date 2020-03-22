@@ -3,11 +3,17 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 const store = new Vuex.Store({
     state: {
-		videoUrl: ''
+		videoUrl: '',
+		user: {
+			
+		}
 	},
     mutations: {
 		changeVideoUrl(state, payload) {
 			state.videoUrl = payload
+		},
+		setUser(state, payload) {
+			state.user = payload
 		}
 	},
     actions: {}
