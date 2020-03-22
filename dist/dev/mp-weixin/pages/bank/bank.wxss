@@ -1,0 +1,38 @@
+.bank {
+  height: 100vh;
+  position: relative;
+}
+.bank .questions-wrapper {
+  background: rgba(225,225,255,0.85);
+  height: 100vh;
+  overflow: auto;
+}
+.bank .title {
+  font-size: 40rpx;
+  padding-top: 20rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+.bank .list {
+  box-sizing: border-box;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #c8c7cc;
+}
+.bank .list .question {
+  color: #333;
+  font-size: 32rpx;
+}
+.bank .list .item-cell {
+  box-sizing: border-box;
+  padding: 20rpx;
+  border-bottom: 1rpx dashed #c8c7cc;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+}
+.bank .list .anwser {
+  margin: 20rpx 0 0 0;
+  color: #007aff;
+}
+

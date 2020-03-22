@@ -10190,6 +10190,7 @@ var _default = {
       "usingAutoImportComponents": {}
     },
     "pages/bank/bank": {
+      "navigationBarTitleText": "考试题库",
       "usingComponents": {},
       "usingAutoImportComponents": {}
     },

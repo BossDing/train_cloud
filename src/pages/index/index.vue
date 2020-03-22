@@ -4,7 +4,7 @@
 		<view class="grid-wrapper">
 			<uni-grid :column="3">
 			    <uni-grid-item>
-			        <navigator url="../video/video" class="nav">
+			        <navigator url="../videoList/videoList" class="nav">
 						<view class="icon-wrapper">
 							<image class="icon" src="/static/img/video.png" mode="aspectFit"></image>
 						</view>

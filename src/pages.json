@@ -25,7 +25,9 @@
         }
         ,{
             "path" : "pages/bank/bank",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "考试题库"
+			}
         }
         ,{
             "path" : "pages/integral/integral",
