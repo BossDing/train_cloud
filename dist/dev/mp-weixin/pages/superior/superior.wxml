@@ -1,1 +1,1 @@
-<view></view>
+<view class="superior"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="__i0__" wx:key="_id"><view class="staff"><view class="header"><view class="avatar"><image class="img" src="{{item.avatar}}" mode="aspectFill"></image></view><view class="name">{{'姓名： '+item.name+''}}</view></view><view class="info"><view class="account">{{'工号：'+item.account+''}}</view></view><view class="investigation"><button type="primary" size="mini" data-event-opts="{{[['tap',[['investigation',['$event']]]]]}}" bindtap="__e">抽查</button></view></view></block></view>

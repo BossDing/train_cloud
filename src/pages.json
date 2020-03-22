@@ -49,7 +49,9 @@
         }
         ,{
             "path" : "pages/superior/superior",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "上级抽查"
+			}
         }
         ,{
             "path" : "pages/result/result",

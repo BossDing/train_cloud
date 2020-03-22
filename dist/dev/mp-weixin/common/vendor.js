@@ -11087,6 +11087,7 @@ var _default = {
       "usingAutoImportComponents": {}
     },
     "pages/superior/superior": {
+      "navigationBarTitleText": "上级抽查",
       "usingComponents": {},
       "usingAutoImportComponents": {}
     },
