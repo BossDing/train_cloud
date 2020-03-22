@@ -215,25 +215,22 @@ var _default = {
 
               case 3:
                 res = _context.sent;
-
-                if (res.data.length) {
-                  this.list = res.data;
-                }
-
-                _context.next = 10;
+                console.log(res);
+                this.list = res.data;
+                _context.next = 11;
                 break;
 
-              case 7:
-                _context.prev = 7;
+              case 8:
+                _context.prev = 8;
                 _context.t0 = _context["catch"](0);
                 console.log(_context.t0);
 
-              case 10:
+              case 11:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this, [[0, 7]]);
+        }, _callee, this, [[0, 8]]);
       }));
 
       function getList() {

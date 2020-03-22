@@ -68,7 +68,7 @@
 						
 					</view>
 				</uni-grid-item>
-				<uni-grid-item>
+				<uni-grid-item v-if="$store.state.user.permissions.includes(2)">
 				    <navigator url="../other/other" class="nav">
 				    	<view class="icon-wrapper">
 				    		<image class="icon" src="/static/img/other.png" mode="aspectFit"></image>

@@ -1,6 +1,6 @@
 <template>
 	<view class="other page">
-		<view class="" v-if="this.list.length" key="has">
+		<view class="" v-if="list.length" key="has">
 			<view class="list" v-for="item in list" :key="item._id">
 				<view class="item">
 					<view class="result">
@@ -12,7 +12,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="none" key="no">
+		<view v-else class="none" key="no">
 			暂无
 		</view>
 	</view>
@@ -33,9 +33,8 @@
 					let res = await db.collection('history').where({
 						account: this.$store.state.user.account
 					}).get()
-					if (res.data.length) {
-						this.list = res.data
-					}
+					console.log(res)
+					this.list = res.data
 					
 				}catch(e){
 					console.log(e)

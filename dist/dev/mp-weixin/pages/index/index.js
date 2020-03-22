@@ -111,13 +111,15 @@ var render = function() {
   var g0 = _vm.$store.state.user.permissions.includes(0)
   var g1 = _vm.$store.state.user.permissions.includes(1)
   var g2 = _vm.$store.state.user.permissions.includes(2)
+  var g3 = _vm.$store.state.user.permissions.includes(2)
   _vm.$mp.data = Object.assign(
     {},
     {
       $root: {
         g0: g0,
         g1: g1,
-        g2: g2
+        g2: g2,
+        g3: g3
       }
     }
   )
