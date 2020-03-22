@@ -59,7 +59,7 @@
 				    		<image class="icon" src="/static/img/other.png" mode="aspectFit"></image>
 				    	</view>
 				    	<view class="nav-txt">
-				    		其余
+				    		查看历史练习
 				    	</view>
 				    </navigator>
 				</uni-grid-item>

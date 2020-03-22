@@ -11062,7 +11062,9 @@ var _default = {
     },
     "pages/archives/archives": {
       "navigationBarTitleText": "档案管理",
-      "usingComponents": {},
+      "usingComponents": {
+        "uni-icons": "/node-modules/@dcloudio/uni-ui/lib/uni-icons/uni-icons"
+      },
       "usingAutoImportComponents": {}
     },
     "pages/bank/bank": {
@@ -11075,7 +11077,7 @@ var _default = {
       "usingAutoImportComponents": {}
     },
     "pages/other/other": {
-      "navigationBarTitleText": "查看历史练习成绩",
+      "navigationBarTitleText": "查看历史练习",
       "usingComponents": {},
       "usingAutoImportComponents": {}
     },

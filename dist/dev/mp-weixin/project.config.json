@@ -55,6 +55,20 @@
 					"id": -1,
 					"name": "pages/archives/archives",
 					"pathName": "pages/archives/archives",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/other/other",
+					"pathName": "pages/other/other",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/special/special",
+					"pathName": "pages/special/special",
 					"scene": null
 				}
 			]

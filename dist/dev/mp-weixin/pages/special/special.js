@@ -225,23 +225,54 @@ var _default = {
 
       return getList;
     }(),
-    submit: function submit() {
-      this.corrects = 0;
-      var len = this.list.length;
+    submit: function () {
+      var _submit = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {
+        var len, i, res;
+        return _regenerator.default.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                this.corrects = 0;
+                len = this.list.length;
 
-      for (var i = 0; i < len; i++) {
-        if (this.list[i].answer === this.answers[i].answer) {
-          this.corrects++;
-        }
+                for (i = 0; i < len; i++) {
+                  if (this.list[i].answer === this.answers[i].answer) {
+                    this.corrects++;
+                  }
+                }
+
+                _context2.next = 5;
+                return db.collection('history').add({
+                  data: {
+                    correct: this.corrects,
+                    score: this.corrects * 10,
+                    time: new Date()
+                  }
+                });
+
+              case 5:
+                res = _context2.sent;
+                uni.navigateTo({
+                  url: "../result/result?corrects=".concat(this.corrects),
+                  success: function success(res) {},
+                  fail: function fail() {},
+                  complete: function complete() {}
+                });
+
+              case 7:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function submit() {
+        return _submit.apply(this, arguments);
       }
 
-      uni.navigateTo({
-        url: "../result/result?corrects=".concat(this.corrects),
-        success: function success(res) {},
-        fail: function fail() {},
-        complete: function complete() {}
-      });
-    }
+      return submit;
+    }()
   },
   onLoad: function onLoad() {
     this.getList();

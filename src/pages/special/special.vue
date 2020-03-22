@@ -62,7 +62,7 @@
 				}
 			},
 			
-			submit() {
+			async submit() {
 				this.corrects = 0
 				let len = this.list.length
 				for (let i = 0; i < len; i++) {
@@ -70,6 +70,13 @@
 						this.corrects++
 					}
 				}
+				let res = await db.collection('history').add({
+					data: {
+						correct: this.corrects,
+						score: this.corrects * 10,
+						time: new Date()
+					}
+				})
 				uni.navigateTo({
 					url: `../result/result?corrects=${this.corrects}`,
 					success: res => {},

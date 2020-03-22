@@ -1,0 +1,31 @@
+.other {
+  background: rgba(225,225,255,0.75);
+  min-height: 100vh;
+}
+.other .item {
+  margin-bottom: 20rpx;
+  background: #fff;
+  height: 200rpx;
+  border-bottom: 1rpx dashed #c8c7cc;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  padding-left: 20rpx;
+}
+.other .item .result {
+  font-size: 52rpx;
+  color: #666;
+}
+.other .item .time {
+  font-size: 36rpx;
+  color: #999;
+  margin-top: 40rpx;
+}
+
