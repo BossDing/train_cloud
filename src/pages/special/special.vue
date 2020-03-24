@@ -1,14 +1,19 @@
 <template>
 	<view class="special page">
 		<view class="questions-wrapper">
-			<view class="title">
-				单选
-			</view>
 			<view class="list" v-for="(item, index) in list" :key="item._id">
 				<view class="question">
-					{{index+1}}. {{item.title}}
+					{{index+1}}. {{item.title}} <text class="type">({{typeMap[item.type]}})</text>
 				</view>
-				<radio-group @change="radioChange($event, index)">
+				<checkbox-group v-if="item.type === '3'" @change="radioChange($event, index)">
+					<label class="item-cell" v-for="o in item.items" :key="o.key">
+						<view>
+							<checkbox :value="o.key" :checked="false" />
+						</view>
+						<view>{{o.key}} 、 {{o.value}}</view>
+					</label>
+				</checkbox-group>
+				<radio-group v-else @change="radioChange($event, index)">
 					<label class="item-cell" v-for="o in item.items" :key="o.key">
 						<view>
 							<radio :value="o.key" :checked="o.checked" />
@@ -25,12 +30,13 @@
 </template>
 
 <script>
-	import { limit } from '../../constants/const.js'
+	import { limit, typeMap } from '../../constants/const.js'
 	const db = wx.cloud.database()
 	import { transQuestion } from '../../utils/transData.js'
 	export default {
 		data() {
 			return {
+				typeMap,
 				type: 'pratice',
 				list: [],
 				answers: [],
@@ -39,7 +45,9 @@
 		},
 		methods: {
 			radioChange(e, i) {
+				
 				let { value } = e.detail
+				console.log(value)
 				this.answers[i].answer = value
 			},
 			
@@ -47,9 +55,16 @@
 				this.corrects = 0
 				let len = this.list.length
 				for (let i = 0; i < len; i++) {
-					if (this.list[i].answer === this.answers[i].answer) {
-						this.corrects++
+					if (this.list[i].type === '3') {
+						if (this.list[i].answer.join() === this.answers[i].answer.join()) {
+							this.corrects++
+						}
+					} else {
+						if (this.list[i].answer.includes(this.answers[i].answer)) {
+							this.corrects++
+						}
 					}
+					
 				}
 				
 				if(this.type === 'exam') {
@@ -71,11 +86,17 @@
 					let res = await db.collection('questions').skip(skip).limit(limit).get()
 					this.list = transQuestion(res.data)
 					this.answers = this.list.map(item => {
-						let obj = {
-							...item
+						let {
+							answer,
+							items,
+							...rest
+						} = item
+						let itemsClone = [...items]
+						return {
+							answer: item.type === '3' ? [] : ['A'],
+							items: itemsClone,
+							...rest
 						}
-						obj.answer = 'A'
-						return obj
 					})
 				}catch(e){
 					console.log(e)

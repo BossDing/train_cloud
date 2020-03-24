@@ -148,7 +148,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 47));
+var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 31));
 
 var _const = __webpack_require__(/*! ../../constants/const.js */ 58);
 
@@ -172,6 +172,7 @@ var db = wx.cloud.database();
 var _default = {
   data: function data() {
     return {
+      typeMap: _const.typeMap,
       list: [],
       total: 0,
       skip: 0

@@ -7,6 +7,7 @@ export const transQuestion = (data) => {
 			d,
 			e,
 			f,
+			answer,
 			...rest
 		} = x
 		let items = [
@@ -17,8 +18,10 @@ export const transQuestion = (data) => {
 			{key: 'E', value: e, checked: false}, 
 			{key: 'F', value: f, checked: false},
 		].filter(t => t.value)
+		answer = answer.split('')
 		return {
 			...rest,
+			answer,
 			items
 		}
 	})

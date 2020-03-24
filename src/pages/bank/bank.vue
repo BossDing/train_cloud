@@ -6,7 +6,7 @@
 			</view>
 			<view class="list" v-for="(item, index) in list" :key="item._id">
 				<view class="question">
-					{{index+1}}. {{item.title}}
+					{{index+1}}. {{item.title}} <text class="type">({{typeMap[item.type]}})</text>
 				</view>
 				<radio-group>
 					<label class="item-cell" v-for="o in item.items" :key="o.key">
@@ -25,12 +25,13 @@
 </template>
 
 <script>
-	import { limit } from '../../constants/const.js'
+	import { limit, typeMap } from '../../constants/const.js'
 	const db = wx.cloud.database()
 	import { transQuestion } from '../../utils/transData.js'
 	export default {
 		data() {
 			return {
+				typeMap,
 				list: [],
 				total: 0,
 				skip: 0

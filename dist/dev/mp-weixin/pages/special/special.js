@@ -148,7 +148,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 47));
+var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 31));
 
 var _const = __webpack_require__(/*! ../../constants/const.js */ 58);
 
@@ -162,6 +162,18 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -170,6 +182,7 @@ var db = wx.cloud.database();
 var _default = {
   data: function data() {
     return {
+      typeMap: _const.typeMap,
       type: 'pratice',
       list: [],
       answers: [],
@@ -179,6 +192,7 @@ var _default = {
   methods: {
     radioChange: function radioChange(e, i) {
       var value = e.detail.value;
+      console.log(value);
       this.answers[i].answer = value;
     },
     submit: function submit() {
@@ -186,8 +200,14 @@ var _default = {
       var len = this.list.length;
 
       for (var i = 0; i < len; i++) {
-        if (this.list[i].answer === this.answers[i].answer) {
-          this.corrects++;
+        if (this.list[i].type === '3') {
+          if (this.list[i].answer.join() === this.answers[i].answer.join()) {
+            this.corrects++;
+          }
+        } else {
+          if (this.list[i].answer.includes(this.answers[i].answer)) {
+            this.corrects++;
+          }
         }
       }
 
@@ -218,10 +238,16 @@ var _default = {
                 res = _context.sent;
                 this.list = (0, _transData.transQuestion)(res.data);
                 this.answers = this.list.map(function (item) {
-                  var obj = _objectSpread({}, item);
+                  var answer = item.answer,
+                      items = item.items,
+                      rest = _objectWithoutProperties(item, ["answer", "items"]);
 
-                  obj.answer = 'A';
-                  return obj;
+                  var itemsClone = _toConsumableArray(items);
+
+                  return _objectSpread({
+                    answer: item.type === '3' ? [] : ['A'],
+                    items: itemsClone
+                  }, rest);
                 });
                 _context.next = 14;
                 break;

@@ -23,4 +23,8 @@
 	background: url(https://cccodedu.oss-cn-shanghai.aliyuncs.com/upload/image/202003/login_bg.jpg) center center repeat-y; 
 	background-size: cover; 
 }
+.type {
+	font-size: 28upx;
+	color: $uni-text-color-grey;
+}
 </style>
