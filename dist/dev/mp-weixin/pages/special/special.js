@@ -213,6 +213,7 @@ var _default = {
 
       if (this.type === 'exam') {
         this.addHistory();
+        this.addScore();
         this.deleteExam();
       }
 
@@ -305,11 +306,47 @@ var _default = {
 
       return addHistory;
     }(),
-    deleteExam: function () {
-      var _deleteExam = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {
+    addScore: function () {
+      var _addScore = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {
+        var res;
         return _regenerator.default.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return db.collection('scores').add({
+                  data: {
+                    account: this.$store.state.user.account,
+                    name: this.$store.state.user.name,
+                    avatar: this.$store.state.user.avatar,
+                    correct: this.corrects,
+                    score: this.corrects * 10,
+                    time: new Date()
+                  }
+                });
+
+              case 2:
+                res = _context3.sent;
+
+              case 3:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, this);
+      }));
+
+      function addScore() {
+        return _addScore.apply(this, arguments);
+      }
+
+      return addScore;
+    }(),
+    deleteExam: function () {
+      var _deleteExam = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {
+        return _regenerator.default.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
               case 0:
                 console.log(this.$store.state.user.account);
                 wx.cloud.callFunction({
@@ -321,10 +358,10 @@ var _default = {
 
               case 2:
               case "end":
-                return _context3.stop();
+                return _context4.stop();
             }
           }
-        }, _callee3, this);
+        }, _callee4, this);
       }));
 
       function deleteExam() {

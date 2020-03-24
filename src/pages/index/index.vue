@@ -33,6 +33,16 @@
 			        	</view>
 			        </navigator>
 			    </uni-grid-item>
+				<uni-grid-item>
+				    <navigator url="../integral/integral" class="nav">
+				    	<view class="icon-wrapper">
+				    		<image class="icon" src="/static/img/integral.png" mode="aspectFit"></image>
+				    	</view>
+				    	<view class="nav-txt">
+				    		积分排行
+				    	</view>
+				    </navigator>
+				</uni-grid-item>
 				<uni-grid-item v-if="$store.state.user.permissions.includes(0)">
 				    <navigator url="../archives/archives" class="nav">
 						<view class="icon-wrapper">
@@ -56,7 +66,7 @@
 				<uni-grid-item v-if="$store.state.user.permissions.includes(2)" class="gird-item">
 				    <navigator url="../special/special?type=exam" class="nav">
 				    	<view class="icon-wrapper">
-				    		<image class="icon" src="/static/img/integral.png" mode="aspectFit"></image>
+				    		<image class="icon" src="/static/img/paper.png" mode="aspectFit"></image>
 				    	</view>
 				    	<view class="nav-txt">
 				    		新试卷

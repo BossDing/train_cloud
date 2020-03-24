@@ -265,6 +265,16 @@ var _uniGrid = function _uniGrid() {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var db = wx.cloud.database();
 var _default = {
   components: {

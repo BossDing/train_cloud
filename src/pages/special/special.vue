@@ -69,6 +69,7 @@
 				
 				if(this.type === 'exam') {
 					this.addHistory()
+					this.addScore()
 					this.deleteExam()
 				}
 				
@@ -107,6 +108,20 @@
 				let res = await db.collection('history').add({
 					data: {
 						account: this.$store.state.user.account,
+						correct: this.corrects,
+						score: this.corrects * 10,
+						time: new Date()
+					}
+				})
+			},
+			
+			
+			async addScore() {
+				let res = await db.collection('scores').add({
+					data: {
+						account: this.$store.state.user.account,
+						name: this.$store.state.user.name,
+						avatar: this.$store.state.user.avatar,
 						correct: this.corrects,
 						score: this.corrects * 10,
 						time: new Date()
