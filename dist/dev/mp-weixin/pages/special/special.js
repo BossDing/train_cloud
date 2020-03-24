@@ -179,6 +179,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 var db = wx.cloud.database();
+var _ = db.command;
 var _default = {
   data: function data() {
     return {
@@ -308,7 +309,7 @@ var _default = {
     }(),
     addScore: function () {
       var _addScore = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {
-        var res;
+        var res, s;
         return _regenerator.default.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
@@ -316,31 +317,34 @@ var _default = {
                 _context3.next = 2;
                 return db.collection('scores').where({
                   account: this.$store.state.user.account
-                });
+                }).get();
 
               case 2:
                 res = _context3.sent;
+                console.log('addScore:', res);
 
                 if (!(res.data.length > 0)) {
-                  _context3.next = 8;
+                  _context3.next = 11;
                   break;
                 }
 
-                _context3.next = 6;
+                s = this.corrects * 10;
+                console.log('s是：', s);
+                _context3.next = 9;
                 return db.collection('scores').where({
                   account: this.$store.state.user.account
                 }).update({
                   data: {
-                    score: this.corrects * 10 + res.data[0].score
+                    score: _.inc(s)
                   }
                 });
 
-              case 6:
-                _context3.next = 10;
+              case 9:
+                _context3.next = 13;
                 break;
 
-              case 8:
-                _context3.next = 10;
+              case 11:
+                _context3.next = 13;
                 return db.collection('scores').add({
                   data: {
                     account: this.$store.state.user.account,
@@ -352,7 +356,7 @@ var _default = {
                   }
                 });
 
-              case 10:
+              case 13:
               case "end":
                 return _context3.stop();
             }

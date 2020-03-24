@@ -32,6 +32,7 @@
 <script>
 	import { limit, typeMap } from '../../constants/const.js'
 	const db = wx.cloud.database()
+	const _ = db.command
 	import { transQuestion } from '../../utils/transData.js'
 	export default {
 		data() {
@@ -119,13 +120,16 @@
 			async addScore() {
 				let res = await db.collection('scores').where({
 					account: this.$store.state.user.account
-				})
+				}).get()
+				console.log('addScore:', res)
 				if (res.data.length > 0) {
+					let s = this.corrects * 10 
+					console.log('s是：', s)
 					await db.collection('scores').where({
 						account: this.$store.state.user.account
 					}).update({
 						data: {
-							score: this.corrects * 10 + res.data[0].score
+							score: _.inc(s)
 						}
 					})
 				} else {
