@@ -172,11 +172,11 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 var _uniGridItem = function _uniGridItem() {
-  return __webpack_require__.e(/*! import() | node-modules/@dcloudio/uni-ui/lib/uni-grid-item/uni-grid-item */ "node-modules/@dcloudio/uni-ui/lib/uni-grid-item/uni-grid-item").then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-grid-item/uni-grid-item */ 116));
+  return __webpack_require__.e(/*! import() | node-modules/@dcloudio/uni-ui/lib/uni-grid-item/uni-grid-item */ "node-modules/@dcloudio/uni-ui/lib/uni-grid-item/uni-grid-item").then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-grid-item/uni-grid-item */ 118));
 };
 
 var _uniGrid = function _uniGrid() {
-  return __webpack_require__.e(/*! import() | node-modules/@dcloudio/uni-ui/lib/uni-grid/uni-grid */ "node-modules/@dcloudio/uni-ui/lib/uni-grid/uni-grid").then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-grid/uni-grid */ 123));
+  return __webpack_require__.e(/*! import() | node-modules/@dcloudio/uni-ui/lib/uni-grid/uni-grid */ "node-modules/@dcloudio/uni-ui/lib/uni-grid/uni-grid").then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-grid/uni-grid */ 125));
 };
 
 //

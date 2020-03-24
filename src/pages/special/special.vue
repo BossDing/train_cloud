@@ -125,12 +125,13 @@
 				if (res.data.length > 0) {
 					let s = this.corrects * 10 
 					console.log('s是：', s)
-					await db.collection('scores').where({
-						account: this.$store.state.user.account
-					}).update({
-						data: {
-							score: _.inc(s)
-						}
+					
+					wx.cloud.callFunction({
+					  name: 'scoreUpdate',
+					  data: {
+						account: this.$store.state.user.account,
+					  	s
+					  }
 					})
 				} else {
 					await db.collection('scores').add({
