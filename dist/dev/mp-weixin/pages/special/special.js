@@ -314,6 +314,33 @@ var _default = {
             switch (_context3.prev = _context3.next) {
               case 0:
                 _context3.next = 2;
+                return db.collection('scores').where({
+                  account: this.$store.state.user.account
+                });
+
+              case 2:
+                res = _context3.sent;
+
+                if (!(res.data.length > 0)) {
+                  _context3.next = 8;
+                  break;
+                }
+
+                _context3.next = 6;
+                return db.collection('scores').where({
+                  account: this.$store.state.user.account
+                }).update({
+                  data: {
+                    score: this.corrects * 10 + res.data[0].score
+                  }
+                });
+
+              case 6:
+                _context3.next = 10;
+                break;
+
+              case 8:
+                _context3.next = 10;
                 return db.collection('scores').add({
                   data: {
                     account: this.$store.state.user.account,
@@ -325,10 +352,7 @@ var _default = {
                   }
                 });
 
-              case 2:
-                res = _context3.sent;
-
-              case 3:
+              case 10:
               case "end":
                 return _context3.stop();
             }

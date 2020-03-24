@@ -117,16 +117,29 @@
 			
 			
 			async addScore() {
-				let res = await db.collection('scores').add({
-					data: {
-						account: this.$store.state.user.account,
-						name: this.$store.state.user.name,
-						avatar: this.$store.state.user.avatar,
-						correct: this.corrects,
-						score: this.corrects * 10,
-						time: new Date()
-					}
+				let res = await db.collection('scores').where({
+					account: this.$store.state.user.account
 				})
+				if (res.data.length > 0) {
+					await db.collection('scores').where({
+						account: this.$store.state.user.account
+					}).update({
+						data: {
+							score: this.corrects * 10 + res.data[0].score
+						}
+					})
+				} else {
+					await db.collection('scores').add({
+						data: {
+							account: this.$store.state.user.account,
+							name: this.$store.state.user.name,
+							avatar: this.$store.state.user.avatar,
+							correct: this.corrects,
+							score: this.corrects * 10,
+							time: new Date()
+						}
+					})
+				}				
 			},
 			
 			async deleteExam() {
