@@ -80,13 +80,12 @@
 			},
 			
 			async getList() {
-				let r = Math.random() * 10
-				r = r === 0 ? r+1 : r
-				let skip = (~~r) * 10
-				
 				try{
-					let res = await db.collection('questions').skip(skip).limit(limit).get()
-					this.list = transQuestion(res.data)
+					let res = await db.collection('questions').aggregate().sample({
+						size: limit,
+					}).end()
+					console.log(res)
+					this.list = transQuestion(res.list)
 					this.answers = this.list.map(item => {
 						let {
 							answer,
@@ -95,7 +94,7 @@
 						} = item
 						let itemsClone = [...items]
 						return {
-							answer: item.type === '3' ? [] : ['A'],
+							answer: [],
 							items: itemsClone,
 							...rest
 						}

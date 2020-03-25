@@ -11,7 +11,7 @@ export const transQuestion = (data) => {
 			...rest
 		} = x
 		let items = [
-			{key: 'A', value: a, checked: true}, 
+			{key: 'A', value: a, checked: false}, 
 			{key: 'B', value: b, checked: false}, 
 			{key: 'C', value: c, checked: false}, 
 			{key: 'D', value: d, checked: false}, 

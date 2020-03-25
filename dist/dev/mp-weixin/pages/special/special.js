@@ -224,21 +224,21 @@ var _default = {
     },
     getList: function () {
       var _getList = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {
-        var r, skip, res;
+        var res;
         return _regenerator.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                r = Math.random() * 10;
-                r = r === 0 ? r + 1 : r;
-                skip = ~~r * 10;
-                _context.prev = 3;
-                _context.next = 6;
-                return db.collection('questions').skip(skip).limit(_const.limit).get();
+                _context.prev = 0;
+                _context.next = 3;
+                return db.collection('questions').aggregate().sample({
+                  size: _const.limit
+                }).end();
 
-              case 6:
+              case 3:
                 res = _context.sent;
-                this.list = (0, _transData.transQuestion)(res.data);
+                console.log(res);
+                this.list = (0, _transData.transQuestion)(res.list);
                 this.answers = this.list.map(function (item) {
                   var answer = item.answer,
                       items = item.items,
@@ -247,24 +247,24 @@ var _default = {
                   var itemsClone = _toConsumableArray(items);
 
                   return _objectSpread({
-                    answer: item.type === '3' ? [] : ['A'],
+                    answer: [],
                     items: itemsClone
                   }, rest);
                 });
-                _context.next = 14;
+                _context.next = 12;
                 break;
 
-              case 11:
-                _context.prev = 11;
-                _context.t0 = _context["catch"](3);
+              case 9:
+                _context.prev = 9;
+                _context.t0 = _context["catch"](0);
                 console.log(_context.t0);
 
-              case 14:
+              case 12:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this, [[3, 11]]);
+        }, _callee, this, [[0, 9]]);
       }));
 
       function getList() {
