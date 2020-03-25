@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "安全培训系统",
-  "usingComponents": {
-    "uni-grid": "/node-modules/@dcloudio/uni-ui/lib/uni-grid/uni-grid",
-    "uni-grid-item": "/node-modules/@dcloudio/uni-ui/lib/uni-grid-item/uni-grid-item"
-  }
-}
